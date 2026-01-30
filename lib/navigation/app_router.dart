@@ -12,6 +12,11 @@ import '../common/screens/premium/upgrade_to_pro_screen.dart';
 import '../dashboard/settings_screen.dart';
 import '../dashboard/reports_screen.dart';
 import '../bi/screens/root/bi_root_screen.dart';
+import '../auth/screens/login/login_screen.dart';
+import '../auth/screens/register/register_screen.dart';
+import '../auth/screens/business_type_selection_screen.dart';
+import '../chat/screens/chat_list_screen.dart';
+import '../chat/screens/chat_detail_screen.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -46,6 +51,26 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const UpgradeToProScreen());
       case RouteNames.bi:
         return MaterialPageRoute(builder: (_) => const BiRootScreen());
+      case RouteNames.login:
+        return MaterialPageRoute(builder: (_) => const LoginScreen());
+      case RouteNames.register:
+        return MaterialPageRoute(builder: (_) => const RegisterScreen());
+      case RouteNames.businessTypeSelection:
+        return MaterialPageRoute(
+          builder: (_) => const BusinessTypeSelectionScreen(),
+        );
+      case RouteNames.chatList:
+        return MaterialPageRoute(builder: (_) => const ChatListScreen());
+      case RouteNames.chatDetail:
+        final args = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(
+          builder: (_) => ChatDetailScreen(
+            chatId: args['chatId'] as String,
+            chatName: args['chatName'] as String,
+            avatarColor: args['avatarColor'] as Color,
+            isOnline: args['isOnline'] as bool,
+          ),
+        );
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

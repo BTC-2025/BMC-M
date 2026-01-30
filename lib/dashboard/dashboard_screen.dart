@@ -8,6 +8,7 @@ import 'sales_screen.dart';
 import 'widgets/beautiful_nav_bar.dart';
 import '../config/app_colors.dart';
 import 'ai_assistant_screen.dart';
+import '../navigation/route_names.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -142,7 +143,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
         subtitle: 'Business Overview',
         actions: [
           _buildHeaderAction(Iconsax.notification, () {}),
-          _buildHeaderAction(Iconsax.message, () {}),
+          _buildHeaderAction(
+            Iconsax.message,
+            () => Navigator.pushNamed(context, RouteNames.chatList),
+          ),
         ],
       ),
       1: AppBarConfig(

@@ -11,4 +11,9 @@ class RouteNames {
   static const String upgradeToPro = '/upgrade_to_pro';
   static const String analytics = '/analytics';
   static const String bi = '/bi';
+  static const String login = '/login';
+  static const String register = '/register';
+  static const String businessTypeSelection = '/business_type_selection';
+  static const String chatList = '/chat_list';
+  static const String chatDetail = '/chat_detail';
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dashboard/dashboard_screen.dart';
+import 'auth/screens/login/login_screen.dart';
 import 'navigation/app_router.dart';
 
 void main() {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // Set the initial route or home
-      home: const DashboardScreen(),
+      home: const LoginScreen(),
       onGenerateRoute: AppRouter.generateRoute,
     );
   }
